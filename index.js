@@ -30,6 +30,14 @@ app.get("/hello", (req, res) => {
     res.render("rolldice.ejs", {num : diceVal}); // {diceVal}
 })
 
+//////////////////////////////////////////////////////
+//  ⬇️ Activity Changing Username.
+
+app.get ("/ig/:username", (req, res) => {
+    let { username } = req.params;
+    res.render("instagram.ejs", { username })
+});
+
 ///////////////////////////////////////////////////////
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
