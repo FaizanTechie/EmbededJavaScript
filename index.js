@@ -25,17 +25,19 @@ app.get("/hello", (req, res) => {
 // })
 
 // ⬇️ Like data accessing from database.
- app.get("/rolldice", (req, res) => {
-    let diceVal = Math.floor(Math.random() * 6) +1;
-    res.render("rolldice.ejs", {num : diceVal}); // {diceVal}
-})
+// ⬇️ Example of conditional statememts in EJS.
+//  app.get("/rolldice", (req, res) => {
+//     let diceVal = Math.floor(Math.random() * 6) +1;
+//     res.render("rolldice.ejs", {diceVal}); // {num : diceVal}
+// })
 
 //////////////////////////////////////////////////////
 //  ⬇️ Activity Changing Username.
 
 app.get ("/ig/:username", (req, res) => {
+    const followers = ["bob", "steve", "alex", "john"];
     let { username } = req.params;
-    res.render("instagram.ejs", { username })
+    res.render("instagram.ejs", { username, followers });
 });
 
 ///////////////////////////////////////////////////////
